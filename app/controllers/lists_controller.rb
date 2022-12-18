@@ -5,7 +5,7 @@ class ListsController < ApplicationController
   end
 
 # 以下を追加
-  def create
+  #def create
      # １.&2. データを受け取り新規登録するためのインスタンス作成
     #list = List.new(list_params)
      # 3. データをデータベースに保存するためのsaveメソッド実行
@@ -40,17 +40,18 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(params[:id])
+    @list = List.find(params[:id])  
   end
 
   def edit
-     @list = List.find(params[:id])
+    @list = List.find(params[:id])
   end
 
   def update
     list = List.find(params[:id])
     list.update(list_params)
     redirect_to list_path(list.id)
+  
   end
 
   def destroy
@@ -64,5 +65,5 @@ class ListsController < ApplicationController
   def list_params
     params.require(:list).permit(:title, :body, :image)#:imageを追加
   end
-
+  
 end
