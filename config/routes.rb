@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   #get 'lists/new'
-  get 'top' => 'home#top'
+  get 'top' => 'homes#top'
   resources :lists#今まで記述したものこれ一つで完了
   #post 'lists' => 'lists#create'
   #get 'lists' => 'lists#index'
